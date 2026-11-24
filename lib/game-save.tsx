@@ -1,0 +1,4 @@
+"use client";
+import {createContext,useContext,useEffect,useRef,useState,type Dispatch,type SetStateAction} from 'react';
+export const GameSaveContext=createContext('dearly-game');
+export function useGameState<T>(field:string,initial:T|(()=>T)):[T,Dispatch<SetStateAction<T>>]{const base=useContext(GameSaveContext),key=base+':'+field;const [value,setValue]=useState(initial),[loaded,setLoaded]=useState(false);const latest=useRef(value);latest.current=value;useEffect(()=>{try{const stored=localStorage.getItem(key);if(stored!==null)setValue(JSON.parse(stored));}catch{}setLoaded(true);},[key]);useEffect(()=>{if(!loaded)return;const save=()=>{try{localStorage.setItem(key,JSON.stringify(latest.current));}catch{}};const timer=setInterval(save,1000);window.addEventListener('pagehide',save);return()=>{clearInterval(timer);save();window.removeEventListener('pagehide',save);};},[key,loaded]);return[value,setValue];}

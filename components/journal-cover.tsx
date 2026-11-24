@@ -1,0 +1,4 @@
+"use client";
+import {useEffect,useState} from "react";
+const covers=[{name:"Sunshine",emoji:"☀️",color:"#f4d977"},{name:"Garden",emoji:"🌷",color:"#bcd6c8"},{name:"Dreams",emoji:"🌙",color:"#c9b5dd"},{name:"Peach",emoji:"🍑",color:"#efb9a9"}];
+export function JournalCover({id,name}:{id:string;name:string}){const [choice,setChoice]=useState(0);useEffect(()=>{try{setChoice(Number(localStorage.getItem(`dearly-cover:${id}`))%covers.length||0);}catch{}},[id]);return <details className="journal-cover" style={{borderColor:covers[choice].color}}><summary><span aria-hidden="true">{covers[choice].emoji}</span><strong>{name}</strong><small>Change cover</small></summary><div className="entry-tabs">{covers.map((c,i)=><button key={c.name} aria-pressed={choice===i} onClick={()=>{setChoice(i);try{localStorage.setItem(`dearly-cover:${id}`,String(i));}catch{}}}>{c.emoji} {c.name}</button>)}</div></details>;}

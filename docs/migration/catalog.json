@@ -1,0 +1,254 @@
+[
+  {
+    "title": "Identity and account recovery",
+    "description": "Dearly feature area: Identity and account recovery. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-01-01",
+        "title": "Enable Google registration and login",
+        "body": "<!-- DEARLY-01-01 -->\n## Goal\nEnable Google registration and login.\n\n## Plan of action\nConfigure an owned Google OAuth client and Supabase Google provider; allow production callbacks; expose the button in both auth modes.\n\n## Source scope\n- `components/auth-form.tsx`\n- `app/login/page.tsx`\n- `app/auth/callback/route.ts`\n- `AUTH-SETUP.md`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nGoogle client/provider configuration remains unverified. UI OAuth flow exists locally; not confirmed deployed.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Google client/provider configuration remains unverified. UI OAuth flow exists locally; not confirmed deployed.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-01-01 -->"
+      },
+      {
+        "key": "DEARLY-01-02",
+        "title": "Restore reliable email verification and password recovery",
+        "body": "<!-- DEARLY-01-02 -->\n## Goal\nRestore reliable email verification and password recovery.\n\n## Plan of action\nConfigure a transactional sender; verify registered-email recovery and expiration; retain existing Supabase identities.\n\n## Source scope\n- `components/auth-form.tsx`\n- `app/login/page.tsx`\n- `app/auth/callback/route.ts`\n- `AUTH-SETUP.md`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nSMTP and production delivery are not confirmed. Do not bulk-confirm user accounts.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** SMTP and production delivery are not confirmed. Do not bulk-confirm user accounts.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-01-02 -->"
+      },
+      {
+        "key": "DEARLY-01-03",
+        "title": "Document authentication and PIN recovery boundaries",
+        "body": "<!-- DEARLY-01-03 -->\n## Goal\nDocument authentication and PIN recovery boundaries.\n\n## Plan of action\nReview PIN handling, session expiry and reset flow; document browser/device limitations and secure recovery.\n\n## Source scope\n- `components/auth-form.tsx`\n- `app/login/page.tsx`\n- `app/auth/callback/route.ts`\n- `AUTH-SETUP.md`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nPIN modules and auth callback exist; no claim of independent security audit.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** PIN modules and auth callback exist; no claim of independent security audit.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-01-03 -->"
+      }
+    ]
+  },
+  {
+    "title": "Personal journal and memories",
+    "description": "Dearly feature area: Personal journal and memories. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-02-01",
+        "title": "Maintain text, photo and voice journal entry flows",
+        "body": "<!-- DEARLY-02-01 -->\n## Goal\nMaintain text, photo and voice journal entry flows.\n\n## Plan of action\nMap each entry type to its composer and feed; preserve captions, timestamps, private defaults and date filtering.\n\n## Source scope\n- `components/personal-journal.tsx`\n- `components/composer.tsx`\n- `app/api/entries/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nSource implementation imported; runtime acceptance remains open.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Source implementation imported; runtime acceptance remains open.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-02-01 -->"
+      },
+      {
+        "key": "DEARLY-02-02",
+        "title": "Protect current-day editing and long-press deletion",
+        "body": "<!-- DEARLY-02-02 -->\n## Goal\nProtect current-day editing and long-press deletion.\n\n## Plan of action\nReview date checks on server and client; confirm edit/delete authorization and mobile selection feedback.\n\n## Source scope\n- `components/personal-journal.tsx`\n- `components/composer.tsx`\n- `app/api/entries/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nExisting behavior needs review against latest requirements.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Existing behavior needs review against latest requirements.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-02-02 -->"
+      },
+      {
+        "key": "DEARLY-02-03",
+        "title": "Keep calendar and memories navigation consistent",
+        "body": "<!-- DEARLY-02-03 -->\n## Goal\nKeep calendar and memories navigation consistent.\n\n## Plan of action\nMap entry dates to calendar indicators; make selected-day feeds and search behave consistently.\n\n## Source scope\n- `components/personal-journal.tsx`\n- `components/composer.tsx`\n- `app/api/entries/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nCalendar and memories source exists; no new device tests performed.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Calendar and memories source exists; no new device tests performed.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-02-03 -->"
+      }
+    ]
+  },
+  {
+    "title": "Media capture and playback",
+    "description": "Dearly feature area: Media capture and playback. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-03-01",
+        "title": "Improve phone photo uploads and media playback",
+        "body": "<!-- DEARLY-03-01 -->\n## Goal\nImprove phone photo uploads and media playback.\n\n## Plan of action\nReview mobile formats, preparation, storage access and playback loading; retain private signed URLs.\n\n## Source scope\n- `components/voice-note.tsx`\n- `components/chat-media.tsx`\n- `lib/prepare-photo.ts`\n- `app/api/media/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nMedia implementation present; reported capture/playback failures require reproduction.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Media implementation present; reported capture/playback failures require reproduction.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-03-01 -->"
+      },
+      {
+        "key": "DEARLY-03-02",
+        "title": "Clarify free transcription support",
+        "body": "<!-- DEARLY-03-02 -->\n## Goal\nClarify free transcription support.\n\n## Plan of action\nDocument browser transcription availability, permissions and offline limitations; provide a readable unsupported state.\n\n## Source scope\n- `components/voice-note.tsx`\n- `components/chat-media.tsx`\n- `lib/prepare-photo.ts`\n- `app/api/media/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nBrowser transcription exists; paid AI transcription/advice is not configured.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Browser transcription exists; paid AI transcription/advice is not configured.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-03-02 -->"
+      }
+    ]
+  },
+  {
+    "title": "Shared spaces and conversations",
+    "description": "Dearly feature area: Shared spaces and conversations. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-04-01",
+        "title": "Maintain shared messages, replies and media",
+        "body": "<!-- DEARLY-04-01 -->\n## Goal\nMaintain shared messages, replies and media.\n\n## Plan of action\nReview unified conversation, swipe reply, composer and per-sender identity; preserve private/space separation.\n\n## Source scope\n- `components/shared-conversation.tsx`\n- `components/social.tsx`\n- `app/api/spaces/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nShared conversation source imported; end-to-end behavior unverified.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Shared conversation source imported; end-to-end behavior unverified.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-04-01 -->"
+      },
+      {
+        "key": "DEARLY-04-02",
+        "title": "Order spaces by recent activity",
+        "body": "<!-- DEARLY-04-02 -->\n## Goal\nOrder spaces by recent activity.\n\n## Plan of action\nReview latest-message query and member-scoped ordering; handle empty spaces.\n\n## Source scope\n- `components/shared-conversation.tsx`\n- `components/social.tsx`\n- `app/api/spaces/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nRecent-activity sorting was added locally; deployment unconfirmed.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Recent-activity sorting was added locally; deployment unconfirmed.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-04-02 -->"
+      },
+      {
+        "key": "DEARLY-04-03",
+        "title": "Improve create, join and invitation entry points",
+        "body": "<!-- DEARLY-04-03 -->\n## Goal\nImprove create, join and invitation entry points.\n\n## Plan of action\nReview code join dialog, accepted-invitation navigation, invite controls and existing-space lookup.\n\n## Source scope\n- `components/shared-conversation.tsx`\n- `components/social.tsx`\n- `app/api/spaces/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nExisting flows imported; acceptance review remains open.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Existing flows imported; acceptance review remains open.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-04-03 -->"
+      }
+    ]
+  },
+  {
+    "title": "People and notifications",
+    "description": "Dearly feature area: People and notifications. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-05-01",
+        "title": "Prioritize recent friend requests",
+        "body": "<!-- DEARLY-05-01 -->\n## Goal\nPrioritize recent friend requests.\n\n## Plan of action\nKeep incoming pending requests first, then outgoing and accepted contacts; verify timestamps and authorization.\n\n## Source scope\n- `components/social.tsx`\n- `components/shared-alerts.tsx`\n- `components/journal-app.tsx`\n- `app/api/social/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nLocal request ranking added; no production verification.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Local request ranking added; no production verification.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-05-01 -->"
+      },
+      {
+        "key": "DEARLY-05-02",
+        "title": "Show unread counts and shared-message alerts",
+        "body": "<!-- DEARLY-05-02 -->\n## Goal\nShow unread counts and shared-message alerts.\n\n## Plan of action\nReview realtime notification refresh, mark-all-read synchronization, red badges and duplicate suppression.\n\n## Source scope\n- `components/social.tsx`\n- `components/shared-alerts.tsx`\n- `components/journal-app.tsx`\n- `app/api/social/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nUnread badge and notice-read event changes exist locally; delivery not verified.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Unread badge and notice-read event changes exist locally; delivery not verified.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-05-02 -->"
+      }
+    ]
+  },
+  {
+    "title": "Daily tasks and reminders",
+    "description": "Dearly feature area: Daily tasks and reminders. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-06-01",
+        "title": "Keep tasks scoped to their selected day",
+        "body": "<!-- DEARLY-06-01 -->\n## Goal\nKeep tasks scoped to their selected day.\n\n## Plan of action\nReview checklist creation, current-day mutation restrictions and mobile time input sizing.\n\n## Source scope\n- `components/goals.tsx`\n- `components/task-reminders.tsx`\n- `components/push-reminders.tsx`\n- `app/api/reminders`\n- `supabase/migrations/004_push_reminders.sql`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nTask source exists; do not infer production behavior from code alone.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Task source exists; do not infer production behavior from code alone.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-06-01 -->"
+      },
+      {
+        "key": "DEARLY-06-02",
+        "title": "Deliver scheduled task and journal reminders",
+        "body": "<!-- DEARLY-06-02 -->\n## Goal\nDeliver scheduled task and journal reminders.\n\n## Plan of action\nReview subscription ownership, server scheduler, timezone handling and three five-minute-spaced attempts; document OS sound limits.\n\n## Source scope\n- `components/goals.tsx`\n- `components/task-reminders.tsx`\n- `components/push-reminders.tsx`\n- `app/api/reminders`\n- `supabase/migrations/004_push_reminders.sql`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nPush/scheduler migrations exist; live scheduler, keys and delivery not verified. Offline background alarms cannot be guaranteed by a web app.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Push/scheduler migrations exist; live scheduler, keys and delivery not verified. Offline background alarms cannot be guaranteed by a web app.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-06-02 -->"
+      }
+    ]
+  },
+  {
+    "title": "Offline journal and installation",
+    "description": "Dearly feature area: Offline journal and installation. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-07-01",
+        "title": "Preserve offline multimedia and safe synchronization",
+        "body": "<!-- DEARLY-07-01 -->\n## Goal\nPreserve offline multimedia and safe synchronization.\n\n## Plan of action\nReview IndexedDB blobs, per-user queues, retries and idempotency; avoid cross-account data exposure.\n\n## Source scope\n- `lib/offline/db.ts`\n- `lib/offline/sync-engine.ts`\n- `components/offline-engine.tsx`\n- `public/sw.js`\n- `public/manifest.json`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nOffline engine exists; reconnection and conflict checks remain open.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Offline engine exists; reconnection and conflict checks remain open.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-07-01 -->"
+      },
+      {
+        "key": "DEARLY-07-02",
+        "title": "Cache the app shell and offline games",
+        "body": "<!-- DEARLY-07-02 -->\n## Goal\nCache the app shell and offline games.\n\n## Plan of action\nReview build asset manifest and navigation fallback; preserve navigation and version upgrades offline.\n\n## Source scope\n- `lib/offline/db.ts`\n- `lib/offline/sync-engine.ts`\n- `components/offline-engine.tsx`\n- `public/sw.js`\n- `public/manifest.json`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nOffline build script and workers imported; no airplane-mode checks performed.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Offline build script and workers imported; no airplane-mode checks performed.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-07-02 -->"
+      },
+      {
+        "key": "DEARLY-07-03",
+        "title": "Keep install guidance in the appropriate UI",
+        "body": "<!-- DEARLY-07-03 -->\n## Goal\nKeep install guidance in the appropriate UI.\n\n## Plan of action\nReview standalone detection, iOS/Android guidance and settings entry; remove stale promotional UI.\n\n## Source scope\n- `lib/offline/db.ts`\n- `lib/offline/sync-engine.ts`\n- `components/offline-engine.tsx`\n- `public/sw.js`\n- `public/manifest.json`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nOfflineDownloadCard was removed from Settings locally; installation components retained.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** OfflineDownloadCard was removed from Settings locally; installation components retained.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-07-03 -->"
+      }
+    ]
+  },
+  {
+    "title": "Solo games and progression",
+    "description": "Dearly feature area: Solo games and progression. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-08-01",
+        "title": "Maintain marble and sweet-match progression",
+        "body": "<!-- DEARLY-08-01 -->\n## Goal\nMaintain marble and sweet-match progression.\n\n## Plan of action\nReview geometric blasts, rock HP, win conditions, difficulty, responsive controls and sound preferences.\n\n## Source scope\n- `components/arcade.tsx`\n- `components/marble-garden.tsx`\n- `components/sweet-match.tsx`\n- `lib/radius-blast.ts`\n- `lib/global-quiz.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nGame engines and radius-blast helper exist; gameplay validation not performed.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Game engines and radius-blast helper exist; gameplay validation not performed.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-08-01 -->"
+      },
+      {
+        "key": "DEARLY-08-02",
+        "title": "Maintain word, trivia and tic-tac-toe games",
+        "body": "<!-- DEARLY-08-02 -->\n## Goal\nMaintain word, trivia and tic-tac-toe games.\n\n## Plan of action\nInventory game modes; review fresh rounds, question diversity, word limits, resume state and screen sizing.\n\n## Source scope\n- `components/arcade.tsx`\n- `components/marble-garden.tsx`\n- `components/sweet-match.tsx`\n- `lib/radius-blast.ts`\n- `lib/global-quiz.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nQuiz/word/game source imported; content coverage and game correctness remain open.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Quiz/word/game source imported; content coverage and game correctness remain open.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-08-02 -->"
+      }
+    ]
+  },
+  {
+    "title": "Shared multiplayer games",
+    "description": "Dearly feature area: Shared multiplayer games. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-09-01",
+        "title": "Apply member-safe shared rematch RPC",
+        "body": "<!-- DEARLY-09-01 -->\n## Goal\nApply member-safe shared rematch RPC.\n\n## Plan of action\nReview migration 008 against live schema; apply through the existing Supabase project; confirm same seated players start the next round.\n\n## Source scope\n- `components/arcade.tsx`\n- `components/space-game-join.tsx`\n- `supabase/migrations/007_shared_progress.sql`\n- `supabase/migrations/008_arcade_next_round.sql`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nMigration 008 prepared locally and not applied. New-round UI depends on this RPC.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Migration 008 prepared locally and not applied. New-round UI depends on this RPC.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-09-01 -->"
+      },
+      {
+        "key": "DEARLY-09-02",
+        "title": "Reveal trivia answers only after both players answer",
+        "body": "<!-- DEARLY-09-02 -->\n## Goal\nReveal trivia answers only after both players answer.\n\n## Plan of action\nReview same-question reveal gating and introduce server enforcement if needed; preserve progress and result visibility.\n\n## Source scope\n- `components/arcade.tsx`\n- `components/space-game-join.tsx`\n- `supabase/migrations/007_shared_progress.sql`\n- `supabase/migrations/008_arcade_next_round.sql`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nClient-side withholding added locally. No server escrow or anti-cheating guarantee.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Client-side withholding added locally. No server escrow or anti-cheating guarantee.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-09-02 -->"
+      },
+      {
+        "key": "DEARLY-09-03",
+        "title": "Maintain shared join, turn and progress display",
+        "body": "<!-- DEARLY-09-03 -->\n## Goal\nMaintain shared join, turn and progress display.\n\n## Plan of action\nReview allowed shared modes, join-to-start transition, player avatars and current turn; retain guest on rematch.\n\n## Source scope\n- `components/arcade.tsx`\n- `components/space-game-join.tsx`\n- `supabase/migrations/007_shared_progress.sql`\n- `supabase/migrations/008_arcade_next_round.sql`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nShared game components imported; two-player acceptance remains open.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Shared game components imported; two-player acceptance remains open.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-09-03 -->"
+      }
+    ]
+  },
+  {
+    "title": "Dearly interface and onboarding",
+    "description": "Dearly feature area: Dearly interface and onboarding. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-10-01",
+        "title": "Fix modal overlap and landing text spacing",
+        "body": "<!-- DEARLY-10-01 -->\n## Goal\nFix modal overlap and landing text spacing.\n\n## Plan of action\nReview first-visit tips during modal focus trapping and hero spacing across screen widths.\n\n## Source scope\n- `app/globals.css`\n- `components/journal-app.tsx`\n- `components/first-visit-tip.tsx`\n- `app/about/page.tsx`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nLocal CSS hides first-visit tip while a modal is open and adjusts hero spacing; not device-verified.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Local CSS hides first-visit tip while a modal is open and adjusts hero spacing; not device-verified.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-10-01 -->"
+      },
+      {
+        "key": "DEARLY-10-02",
+        "title": "Maintain navigation, theme and accessible controls",
+        "body": "<!-- DEARLY-10-02 -->\n## Goal\nMaintain navigation, theme and accessible controls.\n\n## Plan of action\nReview centered yellow plus, task nav, mobile spacing, dark cards, focus states and clear labels.\n\n## Source scope\n- `app/globals.css`\n- `components/journal-app.tsx`\n- `components/first-visit-tip.tsx`\n- `app/about/page.tsx`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nExisting Dearly visual style preserved in migration; accessibility audit pending.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Existing Dearly visual style preserved in migration; accessibility audit pending.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-10-02 -->"
+      }
+    ]
+  },
+  {
+    "title": "Operations, privacy and performance",
+    "description": "Dearly feature area: Operations, privacy and performance. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-11-01",
+        "title": "Inventory database migrations and production configuration",
+        "body": "<!-- DEARLY-11-01 -->\n## Goal\nInventory database migrations and production configuration.\n\n## Plan of action\nRecord applied migration versions before changes; preserve project IDs and user data; back up before schema rollout.\n\n## Source scope\n- `supabase/migrations`\n- `lib/supabase`\n- `proxy.ts`\n- `components/web-analytics.tsx`\n- `app/api/account/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nMigration files 001\u2013008 present. Live application status unknown; 008 specifically unapplied.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Migration files 001\u2013008 present. Live application status unknown; 008 specifically unapplied.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-11-01 -->"
+      },
+      {
+        "key": "DEARLY-11-02",
+        "title": "Review privacy and account deletion controls",
+        "body": "<!-- DEARLY-11-02 -->\n## Goal\nReview privacy and account deletion controls.\n\n## Plan of action\nReview RLS, storage permissions, child/teen privacy requirements and data deletion; obtain qualified compliance advice before certification claims.\n\n## Source scope\n- `supabase/migrations`\n- `lib/supabase`\n- `proxy.ts`\n- `components/web-analytics.tsx`\n- `app/api/account/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nSecurity-related code exists; this migration is not a security or legal certification.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Security-related code exists; this migration is not a security or legal certification.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-11-02 -->"
+      },
+      {
+        "key": "DEARLY-11-03",
+        "title": "Reduce perceived save and navigation latency",
+        "body": "<!-- DEARLY-11-03 -->\n## Goal\nReduce perceived save and navigation latency.\n\n## Plan of action\nProfile mutation and media pipelines; review cancellation, optimistic states, rollback and cache invalidation.\n\n## Source scope\n- `supabase/migrations`\n- `lib/supabase`\n- `proxy.ts`\n- `components/web-analytics.tsx`\n- `app/api/account/route.ts`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nUser-reported slowness tracked; no fresh profiling done.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** User-reported slowness tracked; no fresh profiling done.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-11-03 -->"
+      }
+    ]
+  },
+  {
+    "title": "Source migration and releases",
+    "description": "Dearly feature area: Source migration and releases. Track implementation, outstanding configuration and verified delivery separately.",
+    "tickets": [
+      {
+        "key": "DEARLY-12-01",
+        "title": "Import a credential-free Dearly source snapshot",
+        "body": "<!-- DEARLY-12-01 -->\n## Goal\nImport a credential-free Dearly source snapshot.\n\n## Plan of action\nCopy application and migrations; exclude local secrets and generated output; push without force to the empty destination.\n\n## Source scope\n- `docs/migration`\n- `.github`\n- `README.md`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nSource snapshot prepared. GitHub publication pending authenticated access.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Source snapshot prepared. GitHub publication pending authenticated access.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-12-01 -->"
+      },
+      {
+        "key": "DEARLY-12-02",
+        "title": "Establish feature tickets and a baseline prerelease",
+        "body": "<!-- DEARLY-12-02 -->\n## Goal\nEstablish feature tickets and a baseline prerelease.\n\n## Plan of action\nPublish this catalog as milestones/issues; add evidence comments and reusable templates; attach a baseline source prerelease to the migration milestone.\n\n## Source scope\n- `docs/migration`\n- `.github`\n- `README.md`\n\n## Acceptance criteria\n- [ ] Complete the plan without regressing existing Dearly data or UI.\n- [ ] Record implementation changes and relevant evidence in a comment.\n- [ ] Record failures, blockers and deployment/migration status explicitly.\n- [ ] Link the delivering commit/PR and release before closing.\n\n## Current evidence\nCatalog prepared; GitHub objects and release pending publication.\n\nImported from existing project requests; no historical test or deployment success is implied.\n",
+        "comment": "### Migration audit \u2014 2026-11-25\n**Action taken:** Located and included the source files listed in this ticket in the migration snapshot.\n**Success:** Source inventory and ticket plan prepared.\n**Known status / failures:** Catalog prepared; GitHub objects and release pending publication.\n**Validation:** Source inspection only; no application tests run during migration.\n**Next action:** Execute the plan, record actual outcomes here, then link the release.\n<!-- migration-audit-DEARLY-12-02 -->"
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "name": "Dearly \u2014 Your days, held close",
+  "short_name": "Dearly",
+  "id": "/",
+  "start_url": "/my-day",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fff9ef",
+  "theme_color": "#563769",
+  "icons": [
+    {
+      "src": "/app-book-light-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/app-book-light-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "portrait",
+  "description": "Your private journal, daily tasks and shared memories.",
+  "lang": "en"
+}

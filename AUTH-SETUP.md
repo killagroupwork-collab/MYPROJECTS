@@ -1,0 +1,9 @@
+# Activate sign-in and password reset
+Email/password uses Supabase Auth. Do not change existing user IDs or create a new Supabase project.
+
+1. Create or use a mailbox you control. For Gmail SMTP use two-step verification and, if eligible, a dedicated Google app password. Never put this credential in the repo or a chat.
+2. In Supabase Authentication → SMTP, use smtp.gmail.com on port 587 (STARTTLS), the full Gmail address as sender and username, and the app password. Keep email/password enabled. Send a recovery email to a test account outside the project team; check delivery and expiry. Gmail is quota-limited.
+3. In Google Auth Platform configure the audience and branding, then create a Web application OAuth client. Add https://dearly.com.ng as an authorized JavaScript origin. Copy the exact Google provider callback URL shown by Supabase into Google's authorized redirect URIs. Enable Google in Supabase using the resulting client ID and secret. Publish the OAuth app to the intended audience when ready.
+4. In Supabase set Site URL to https://dearly.com.ng and allow the Dearly auth callback, including the next query variants used by the frontend. Verify the Google and recovery flows return to the production domain. Use the same browser/device that requested the reset for the current PKCE flow.
+5. Set AUTH_EMAIL_READY=true and AUTH_GOOGLE_READY=true independently in the Vercel production project once their providers are configured. Deploy the updated source. Confirm Google returns to the journal, and a registered email receives a link that permits a password change and subsequent email/password login.
+6. Review existing unverified email accounts before switching on Google sign-in or email confirmation. Decide separately whether new password signups must confirm their email. Do not bulk-confirm accounts or enable public signup mail until SMTP works.

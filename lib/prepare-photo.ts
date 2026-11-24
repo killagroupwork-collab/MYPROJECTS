@@ -1,0 +1,6 @@
+/** Decode phone camera images before upload; export a portable, smaller JPEG. */
+export async function preparePhoto(file:File):Promise<File>{
+ if(file.type==='image/gif')return file;
+ const url=URL.createObjectURL(file);
+ try{const image=new Image();image.src=url;await image.decode();const scale=Math.min(1,1600/Math.max(image.naturalWidth,image.naturalHeight));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));const context=canvas.getContext('2d');if(!context)throw new Error('Could not prepare this photo.');context.fillStyle='#ffffff';context.fillRect(0,0,canvas.width,canvas.height);context.drawImage(image,0,0,canvas.width,canvas.height);const blob=await new Promise<Blob|null>(resolve=>canvas.toBlob(resolve,'image/jpeg',.8));if(!blob)throw new Error('Could not prepare this photo.');return new File([blob],'journal-photo.jpg',{type:'image/jpeg'});}catch{if(['image/jpeg','image/png','image/webp'].includes(file.type)&&file.size<=20*1024*1024)return file;throw new Error('This phone photo could not be decoded. Choose a JPEG photo or use your camera’s Most Compatible format.');}finally{URL.revokeObjectURL(url);}
+}

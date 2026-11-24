@@ -1,0 +1,2 @@
+import {NextResponse} from 'next/server';
+export function GET(){const publicKey=process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;if(!publicKey)return NextResponse.json({error:'Push reminders are still being configured. Calendar reminders remain available.'},{status:503});return NextResponse.json({publicKey});}
